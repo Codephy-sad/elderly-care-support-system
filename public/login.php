@@ -2,7 +2,7 @@
 require_once '../config/database.php';
 require_once '../config/auth.php';
 
-// map role_id to its folder
+
 $role_folders = [
     1 => 'elderly',
     2 => 'family',
@@ -14,7 +14,7 @@ $role_folders = [
     8 => 'volunteer',
 ];
 
-// helper: work out where to send the user based on their role
+
 function get_redirect_url($role_id, $role_folders) {
     $redirect = "index.php"; // safe fallback
     if (array_key_exists($role_id, $role_folders)) {
@@ -27,7 +27,7 @@ function get_redirect_url($role_id, $role_folders) {
     return $redirect;
 }
 
-// already logged in? send them straight to their dashboard
+
 if (isLoggedIn()) {
     $role_id = isset($_SESSION['role_id']) ? (int)$_SESSION['role_id'] : 0;
     header("Location: " . get_redirect_url($role_id, $role_folders));

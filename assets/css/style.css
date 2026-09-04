@@ -74,3 +74,204 @@
     line-height: 1.1;
     color: #2f5d50;
 }
+
+/* --- Elderly-specific styles --- */
+
+/* larger base font for elderly pages */
+.elderly-page {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* page header with consistent styling */
+.elderly-page-header {
+    border-left: 4px solid #2f5d50;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.elderly-page-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+/* content cards */
+.elderly-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px rgba(47, 93, 80, 0.08);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e0e7e3;
+}
+
+.elderly-card--highlight {
+    border-left: 4px solid #2f5d50;
+}
+
+.elderly-card--warning {
+    border-left: 4px solid #e67e22;
+}
+
+.elderly-card--danger {
+    border-left: 4px solid #c0392b;
+}
+
+.elderly-card--success {
+    border-left: 4px solid #27ae60;
+}
+
+.elderly-card--muted {
+    border-left: 4px solid #b0bec5;
+    opacity: 0.8;
+}
+
+/* large buttons for elderly touch targets */
+.btn-elderly {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    min-height: 48px;
+}
+
+.btn-elderly-lg {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    min-height: 56px;
+}
+
+/* emergency button */
+.btn-emergency {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 1rem;
+    min-height: 80px;
+}
+
+.btn-emergency:hover,
+.btn-emergency:focus {
+    background: #a93226;
+    border-color: #a93226;
+    color: #fff;
+}
+
+/* status badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-open { background: #fff3cd; color: #856404; }
+.status-in_progress { background: #cce5ff; color: #004085; }
+.status-completed, .status-resolved, .status-served, .status-taken, .status-paid, .status-approved, .status-attended { background: #d4edda; color: #155724; }
+.status-cancelled, .status-rejected, .status-missed { background: #f8d7da; color: #721c24; }
+.status-pending { background: #e2e3e5; color: #383d41; }
+.status-skipped { background: #ffeeba; color: #856404; }
+.status-active { background: #f8d7da; color: #721c24; }
+.status-acknowledged { background: #cce5ff; color: #004085; }
+.status-registered { background: #d1ecf1; color: #0c5460; }
+.status-unpaid { background: #fff3cd; color: #856404; }
+.status-partial { background: #ffeeba; color: #856404; }
+.status-overdue { background: #f8d7da; color: #721c24; }
+
+/* meal type labels */
+.meal-type {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.meal-breakfast { background: #ffeaa7; color: #6c5b1a; }
+.meal-lunch { background: #dfe6e9; color: #2d3436; }
+.meal-dinner { background: #fab1a0; color: #6b3a2e; }
+.meal-snack { background: #a29bfe; color: #fff; }
+
+/* section headers inside pages */
+.elderly-section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2f5d50;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e7e3;
+}
+
+/* empty state message */
+.elderly-empty {
+    text-align: center;
+    padding: 2rem;
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+/* notification badge in navbar */
+.nav-badge {
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+    top: -6px;
+}
+
+/* list style for messages/notifications */
+.elderly-list-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e7e3;
+}
+
+.elderly-list-item:last-child {
+    border-bottom: none;
+}
+
+.elderly-list-item.unread {
+    background: #f0f7f4;
+    padding-left: 1rem;
+    border-left: 3px solid #2f5d50;
+}
+
+/* form controls for elderly */
+.elderly-page .form-control,
+.elderly-page .form-select {
+    font-size: 1.05rem;
+    padding: 0.6rem 0.9rem;
+    min-height: 48px;
+}
+
+.elderly-page .form-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+    .elderly-page-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .btn-emergency {
+        padding: 1.5rem 2rem;
+        font-size: 1.3rem;
+    }
+
+    .dashboard-card-value {
+        font-size: 1.6rem;
+    }
+}
