@@ -40,3 +40,37 @@
 .form-label {
     font-weight: 600;
 }
+
+/* --- Dashboard --- */
+.dashboard-welcome {
+    border-left: 4px solid #2f5d50;
+    padding-left: 1rem;
+}
+
+.dashboard-card {
+    background: #fff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 16px rgba(47, 93, 80, 0.09);
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid #2f5d50;
+}
+
+.dashboard-card--muted {
+    border-left-color: #b0bec5;
+}
+
+.dashboard-card-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6c757d;
+    margin-bottom: 0.4rem;
+}
+
+.dashboard-card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #2f5d50;
+}
