@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.local
+vendor/
+composer.lock
+.idea/
+.vscode/
+*.tmp

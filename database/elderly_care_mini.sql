@@ -1,0 +1,3 @@
+-- Schema for elderly_care_ will be added in a later step.
+-- CREATE DATABASE IF NOT EXISTS elderly_care_ CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- USE elderly_care_;

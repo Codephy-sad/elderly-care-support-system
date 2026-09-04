@@ -1,0 +1,42 @@
+.app-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f4f1ea;
+    color: #2c3e2d;
+    font-size: 1.05rem;
+}
+
+.app-navbar {
+    background: #2f5d50;
+}
+
+.app-footer {
+    background: #e7efe9;
+    color: #3d4a3f;
+}
+
+.auth-card {
+    max-width: 480px;
+    margin: 1.5rem auto;
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 8px 24px rgba(47, 93, 80, 0.12);
+}
+
+.btn-brand {
+    background: #2f5d50;
+    border-color: #2f5d50;
+    color: #fff;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background: #244a40;
+    border-color: #244a40;
+    color: #fff;
+}
+
+.form-label {
+    font-weight: 600;
+}
