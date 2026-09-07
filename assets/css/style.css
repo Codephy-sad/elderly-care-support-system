@@ -2,18 +2,14 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #f4f1ea;
-    color: #2c3e2d;
+    background: #faf6f0;
+    color: #1f2937;
     font-size: 1.05rem;
 }
 
-.app-navbar {
-    background: #2f5d50;
-}
-
 .app-footer {
-    background: #e7efe9;
-    color: #3d4a3f;
+    background: #f0ebe0;
+    color: #374151;
 }
 
 .auth-card {
@@ -21,19 +17,19 @@
     margin: 1.5rem auto;
     border: 0;
     border-radius: 1rem;
-    box-shadow: 0 8px 24px rgba(47, 93, 80, 0.12);
+    box-shadow: 0 8px 24px rgba(30, 48, 84, 0.12);
 }
 
 .btn-brand {
-    background: #2f5d50;
-    border-color: #2f5d50;
+    background: #1e3054;
+    border-color: #1e3054;
     color: #fff;
 }
 
 .btn-brand:hover,
 .btn-brand:focus {
-    background: #244a40;
-    border-color: #244a40;
+    background: #152340;
+    border-color: #152340;
     color: #fff;
 }
 

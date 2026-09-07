@@ -1,32 +1,50 @@
 <?php ?>
-<nav class="navbar navbar-expand-lg navbar-dark app-navbar">
-    <div class="container">
-        <a class="navbar-brand fw-semibold" href="<?php echo sanitize(public_url('index.php')); ?>">
-            Elderly Care
+<nav class="site-navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <!-- Logo Top Left -->
+        <a href="<?php echo sanitize(public_url('index.php')); ?>" class="nav-logo">
+            🏡 Elderly Care
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <?php if (isLoggedIn()): ?>
-                    <li class="nav-item">
-                        <span class="navbar-text text-white me-3">
-                            Hello, <?php echo sanitize($_SESSION['name'] ?? ''); ?>
-                        </span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo sanitize(public_url('logout.php')); ?>">Logout</a>
-                    </li>
-                <?php else: ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo sanitize(public_url('login.php')); ?>">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo sanitize(public_url('register.php')); ?>">Register</a>
-                    </li>
-                <?php endif; ?>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="<?php echo sanitize(public_url('index.php')); ?>">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="<?php echo sanitize(public_url('services.php')); ?>">Services <span class="dd-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo sanitize(public_url('care.php')); ?>">Care & Wellness</a></li>
+                        <li><a href="<?php echo sanitize(public_url('food.php')); ?>">Food & Nutrition</a></li>
+                        <li><a href="<?php echo sanitize(public_url('activities.php')); ?>">Activities</a></li>
+                        <li><a href="<?php echo sanitize(public_url('facilities.php')); ?>">Facilities & Rooms</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Get Involved <span class="dd-arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo sanitize(public_url('donation.php')); ?>">Donation</a></li>
+                        <li><a href="<?php echo sanitize(public_url('volunteer.php')); ?>">Volunteer</a></li>
+                    </ul>
+                </li>
+                <li><a href="<?php echo sanitize(public_url('contact.php')); ?>">Contact</a></li>
+                <li><a href="<?php echo sanitize(public_url('donation.php')); ?>" style="color: var(--amber);">Donate</a></li>
             </ul>
+
+            <!-- Auth Top Right -->
+            <div class="nav-auth">
+                <?php if (isLoggedIn()): ?>
+                    <span class="nav-user-greeting">Hello, <?php echo sanitize($_SESSION['name'] ?? ''); ?></span>
+                    <a href="<?php echo sanitize(public_url('logout.php')); ?>" class="nav-login-btn">Logout</a>
+                <?php else: ?>
+                    <a href="<?php echo sanitize(public_url('login.php')); ?>" class="nav-login-btn">Login</a>
+                    <a href="<?php echo sanitize(public_url('register.php')); ?>" class="nav-register-btn">Register</a>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </nav>

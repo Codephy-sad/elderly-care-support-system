@@ -1,5 +1,6 @@
 <?php
 $pageTitle = $pageTitle ?? (defined('APP_NAME') ? APP_NAME : 'Elderly Care');
+$isLandingPage = $isLandingPage ?? false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,14 @@ $pageTitle = $pageTitle ?? (defined('APP_NAME') ? APP_NAME : 'Elderly Care');
     <title><?php echo sanitize($pageTitle); ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo sanitize(app_base_url() . '/assets/css/style.css'); ?>">
+    <?php if ($isLandingPage): ?>
+    <link rel="stylesheet" href="<?php echo sanitize(app_base_url() . '/assets/css/landing.css'); ?>">
+    <?php endif; ?>
 </head>
-<body class="app-body">
+<body class="<?php echo $isLandingPage ? 'public-page' : 'app-body'; ?>">
 <?php require_once __DIR__ . '/navbar.php'; ?>
+<?php if (!$isLandingPage): ?>
 <main class="container py-4">
+<?php else: ?>
+<main>
+<?php endif; ?>
