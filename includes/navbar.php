@@ -3,6 +3,7 @@
 // Determine if we're on the public landing page or the authenticated app
 $_isLanding = isset($isLandingPage) && $isLandingPage;
 $_isElderly = isLoggedIn() && (int)($_SESSION['role_id'] ?? 0) === 1;
+$_isFamily = isLoggedIn() && (int)($_SESSION['role_id'] ?? 0) === 2;
 ?>
 
 <?php if ($_isLanding): ?>
@@ -115,6 +116,34 @@ $_isElderly = isLoggedIn() && (int)($_SESSION['role_id'] ?? 0) === 1;
                             <li><a class="dropdown-item" href="<?php echo sanitize(elderly_url('profile.php')); ?>">My Profile</a></li>
                             <li><a class="dropdown-item" href="<?php echo sanitize(elderly_url('room_change.php')); ?>">Room Change</a></li>
                             <li><a class="dropdown-item text-danger fw-bold" href="<?php echo sanitize(elderly_url('emergency.php')); ?>">Emergency Help</a></li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
+                <?php if ($_isFamily): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo sanitize(app_base_url() . '/family/index.php'); ?>">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo sanitize(app_base_url() . '/family/elderly.php'); ?>">My Elderly</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo sanitize(app_base_url() . '/family/daily_updates.php'); ?>">Daily Updates</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/meals.php'); ?>">Meals</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/medications.php'); ?>">Medications</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/activities.php'); ?>">Activities</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/visits.php'); ?>">Visits</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/requests.php'); ?>">Requests</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/messages.php'); ?>">Messages</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/memories.php'); ?>">Memories</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/payments.php'); ?>">Payments</a></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/notifications.php'); ?>">Notifications</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="<?php echo sanitize(app_base_url() . '/family/profile.php'); ?>">My Profile</a></li>
                         </ul>
                     </li>
                 <?php endif; ?>

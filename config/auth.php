@@ -87,3 +87,16 @@ function getElderlyProfileId($pdo, $user_id) {
     return $row ? (int)$row['id'] : null;
 }
 
+// get approved family connections for a given family user
+function getFamilyConnections($pdo, $family_user_id) {
+    $stmt = $pdo->prepare("
+        SELECT fc.*, ep.user_id as elderly_user_id, u.name as elderly_name
+        FROM family_connections fc
+        JOIN elderly_profiles ep ON ep.id = fc.elderly_profile_id
+        JOIN users u ON u.id = ep.user_id
+        WHERE fc.family_user_id = ? AND fc.status = 'approved'
+    ");
+    $stmt->execute([$family_user_id]);
+    return $stmt->fetchAll();
+}
+
