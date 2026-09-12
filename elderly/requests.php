@@ -28,7 +28,7 @@ require_once '../includes/header.php';
                 <h1>My Assistance Requests</h1>
                 <p class="text-muted mb-0">Track your requests and their status</p>
             </div>
-            <a href="request_new.php" class="btn btn-brand btn-elderly">New Request</a>
+            <a href="request_new.php" class="btn btn-outline-light btn-elderly">New Request</a>
         </div>
     </div>
 
