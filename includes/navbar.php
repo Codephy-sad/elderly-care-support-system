@@ -1,5 +1,5 @@
 <?php if (isLoggedIn() && (int)($_SESSION['role_id'] ?? 0) === 1 && !($isLandingPage ?? false)): ?>
-<nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar" style="background-color: #1e3054 !important; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;">
     <div class="container">
         <a class="navbar-brand fw-semibold" href="<?php echo sanitize(elderly_url('index.php')); ?>">
             Elderly Care
@@ -38,14 +38,17 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item">
-                    <span class="navbar-text text-white me-3">
+                    <span class="navbar-text fw-semibold" style="color: #e0e0e0; font-size: 0.9rem;">
                         Hello, <?php echo sanitize($_SESSION['name'] ?? ''); ?>
                     </span>
                 </li>
+                <li class="nav-item" style="margin: 0 0.5rem;">
+                    <span class="text-white-50" style="opacity: 0.35;">|</span>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo sanitize(public_url('logout.php')); ?>">Logout</a>
+                    <a class="nav-link fw-semibold" href="<?php echo sanitize(public_url('logout.php')); ?>" style="color: #e0e0e0;">Logout</a>
                 </li>
             </ul>
         </div>

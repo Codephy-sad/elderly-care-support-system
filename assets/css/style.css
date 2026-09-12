@@ -1,15 +1,33 @@
+:root {
+    --brand-navy: #1e3054;
+    --brand-navy-dark: #152340;
+    --brand-green: #2f5d50;
+    --bg-page: #faf7f2;
+    --bg-card: #ffffff;
+    --bg-cream: #faf6f0;
+    --bg-empty: #f7f5f1;
+    --bg-footer: #f0ebe0;
+    --border-light: #e0e7e3;
+    --border-soft: #e4ddd1;
+    --accent-sage: #4c7c73;
+    --accent-sage-light: #e8f0ee;
+    --text-dark: #1f2937;
+    --text-muted: #6c757d;
+}
+
 .app-body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #faf6f0;
-    color: #1f2937;
+    background: var(--bg-page);
+    color: var(--text-dark);
     font-size: 1.05rem;
 }
 
 .app-footer {
-    background: #f0ebe0;
+    background: var(--bg-footer);
     color: #374151;
+    border-top: 1px solid #d6cfc4;
 }
 
 .auth-card {
@@ -21,34 +39,34 @@
 }
 
 .btn-brand {
-    background: #1e3054;
-    border-color: #1e3054;
+    background: var(--brand-navy);
+    border-color: var(--brand-navy);
     color: #fff;
 }
 
 .btn-brand:hover,
 .btn-brand:focus {
-    background: #152340;
-    border-color: #152340;
+    background: var(--brand-navy-dark);
+    border-color: var(--brand-navy-dark);
     color: #fff;
 }
 
 .form-label {
     font-weight: 600;
-
+}
 
 /* --- Dashboard --- */
 .dashboard-welcome {
-    border-left: 4px solid #2f5d50;
+    border-left: 4px solid var(--brand-green);
     padding-left: 1rem;
 }
 
 .dashboard-card {
-    background: #fff;
+    background: var(--bg-card);
     border-radius: 0.75rem;
     box-shadow: 0 4px 16px rgba(47, 93, 80, 0.09);
     padding: 1.25rem 1.5rem;
-    border-left: 4px solid #2f5d50;
+    border-left: 4px solid var(--brand-green);
 }
 
 .dashboard-card--muted {
@@ -60,7 +78,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #6c757d;
+    color: var(--text-muted);
     margin-bottom: 0.4rem;
 }
 
@@ -68,42 +86,76 @@
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.1;
-    color: #2f5d50;
+    color: var(--brand-green);
 }
 
 /* --- Elderly-specific styles --- */
 
-/* larger base font for elderly pages */
+/* page container — centered, constrained width on large screens */
 .elderly-page {
     font-size: 1.1rem;
     line-height: 1.6;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
 }
 
-/* page header with consistent styling */
+/* page header */
 .elderly-page-header {
-    border-left: 4px solid #2f5d50;
+    border-left: 4px solid var(--accent-sage);
     padding-left: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+
+/* title block inside header flex row — allow wrap, never squeeze button */
+.elderly-page-header .d-flex > div:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+/* action button inside header flex row — stay right, never shrink */
+.elderly-page-header .d-flex > a,
+.elderly-page-header .d-flex > button {
+    flex-shrink: 0;
+    margin-left: 1rem;
 }
 
 .elderly-page-header h1 {
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.15rem;
+    color: var(--text-dark);
+}
+
+.elderly-page-header p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+/* section titles — clearly subordinate to h1 */
+.elderly-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-sage);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--border-soft);
 }
 
 /* content cards */
 .elderly-card {
-    background: #fff;
+    background: var(--bg-card);
     border-radius: 0.75rem;
-    box-shadow: 0 2px 12px rgba(47, 93, 80, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     padding: 1.25rem 1.5rem;
     margin-bottom: 1rem;
-    border: 1px solid #e0e7e3;
+    border: 1px solid var(--border-soft);
 }
 
 .elderly-card--highlight {
-    border-left: 4px solid #2f5d50;
+    border-left: 4px solid var(--accent-sage);
 }
 
 .elderly-card--warning {
@@ -196,22 +248,22 @@
 .meal-dinner { background: #fab1a0; color: #6b3a2e; }
 .meal-snack { background: #a29bfe; color: #fff; }
 
-/* section headers inside pages */
-.elderly-section-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #2f5d50;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e0e7e3;
-}
-
-/* empty state message */
+/* empty state — visual container instead of bare floating text */
 .elderly-empty {
     text-align: center;
-    padding: 2rem;
-    color: #6c757d;
-    font-size: 1rem;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    max-width: 520px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-soft);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.elderly-empty p {
+    margin-bottom: 0.25rem;
 }
 
 /* notification badge in navbar */
@@ -229,7 +281,7 @@
 /* list style for messages/notifications */
 .elderly-list-item {
     padding: 1rem 0;
-    border-bottom: 1px solid #e0e7e3;
+    border-bottom: 1px solid var(--border-light);
 }
 
 .elderly-list-item:last-child {
@@ -239,7 +291,7 @@
 .elderly-list-item.unread {
     background: #f0f7f4;
     padding-left: 1rem;
-    border-left: 3px solid #2f5d50;
+    border-left: 3px solid var(--brand-green);
 }
 
 /* form controls for elderly */
@@ -270,4 +322,15 @@
     .dashboard-card-value {
         font-size: 1.6rem;
     }
+
+    .elderly-empty {
+        padding: 2rem 1.5rem;
+        margin: 1.5rem auto;
+    }
 }
+
+.app-navbar {
+    background-color: var(--brand-navy) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+

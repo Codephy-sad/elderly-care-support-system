@@ -74,3 +74,14 @@ function app_base_url() {
 function public_url($page) {
     return app_base_url() . '/public/' . ltrim($page, '/');
 }
+
+function elderly_url($page) {
+    return app_base_url() . '/elderly/' . ltrim($page, '/');
+}
+
+function getElderlyProfileId($pdo, $user_id) {
+    $stmt = $pdo->prepare("SELECT id FROM elderly_profiles WHERE user_id = ? LIMIT 1");
+    $stmt->execute([$user_id]);
+    $row = $stmt->fetch();
+    return $row ? (int)$row['id'] : null;
+}
